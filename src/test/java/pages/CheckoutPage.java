@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends BasePage {
 
-    private By cartSummaryPanel = By.id("cart-summary");
-    private By cartItemRows = By.cssSelector(".cart-item");
-    private By checkoutButton = By.id("checkout");
-    private By checkoutErrorMessage = By.cssSelector(".checkout-error");
+    private static final By CART_SUMMARY_PANEL = By.id("cart-summary");
+    private static final By CART_ITEM_ROWS = By.cssSelector(".cart-item");
+    private static final By CHECKOUT_BUTTON = By.id("checkout");
+    private static final By CHECKOUT_ERROR_MESSAGE = By.cssSelector(".checkout-error");
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -20,18 +20,18 @@ public class CheckoutPage extends BasePage {
     }
 
     public boolean isCartSummaryDisplayed() {
-        return driver.findElement(cartSummaryPanel).isDisplayed();
+        return isDisplayed(CART_SUMMARY_PANEL);
     }
 
     public int getCartItemCount() {
-        return driver.findElements(cartItemRows).size();
+        return countElements(CART_ITEM_ROWS);
     }
 
     public void clickCheckoutButton() {
-        driver.findElement(checkoutButton).click();
+        click(CHECKOUT_BUTTON);
     }
 
     public String getCheckoutErrorMessage() {
-        return driver.findElement(checkoutErrorMessage).getText();
+        return getText(CHECKOUT_ERROR_MESSAGE);
     }
 }
