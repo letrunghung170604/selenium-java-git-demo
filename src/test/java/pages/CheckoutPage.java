@@ -8,7 +8,7 @@ public class CheckoutPage extends BasePage {
 
     private By cartSummaryPanel = By.id("cart-summary");
     private By cartItemRows = By.cssSelector(".cart-item");
-    private By checkoutButton = By.id("checkout");
+    private By checkoutButton = By.cssSelector("[data-testid='checkout-button']");
     private By checkoutErrorMessage = By.cssSelector(".checkout-error");
 
     public CheckoutPage(WebDriver driver) {
