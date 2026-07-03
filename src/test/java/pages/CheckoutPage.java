@@ -6,10 +6,12 @@ import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends BasePage {
 
+
     private static final By CART_SUMMARY_PANEL = By.id("cart-summary");
     private static final By CART_ITEM_ROWS = By.cssSelector(".cart-item");
-    private static final By CHECKOUT_BUTTON = By.id("checkout");
+    private static final By CHECKOUT_BUTTON = By.cssSelector("[data-testid='checkout-button']")
     private static final By CHECKOUT_ERROR_MESSAGE = By.cssSelector(".checkout-error");
+
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
